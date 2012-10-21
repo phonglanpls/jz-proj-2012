@@ -2,8 +2,10 @@
 # Set this to development, staging or production
 # SetEnv PYRO_ENV production
 
-<IfModule mod_rewrite.c>
 
+	
+<IfModule mod_rewrite.c>
+	
     # Make sure directory listing is disabled
 	Options +FollowSymLinks -Indexes
 	RewriteEngine on
@@ -37,7 +39,7 @@
 	# Send request via index.php (again, not if its a real file or folder)
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-
+	 
 	<IfModule mod_php5.c>
 		RewriteRule ^(.*)$ index.php/$1 [L]
 	</IfModule>
@@ -45,5 +47,5 @@
 	<IfModule !mod_php5.c>
 		RewriteRule ^(.*)$ index.php?/$1 [L]
 	</IfModule>
-
+	
 </IfModule>

@@ -20,7 +20,7 @@ class MY_Email extends CI_Email {
         parent::__construct($config);
 
         //set mail protocol
-        $config['protocol'] = Settings::get('mail_protocol');
+        $config['protocol'] = Settings_class::get('mail_protocol');
 
         //set a few config items (duh)
         $config['mailtype']	= "html";
@@ -29,29 +29,44 @@ class MY_Email extends CI_Email {
         $config['newline']	= "\r\n";
 
         //sendmail options
-        if (Settings::get('mail_protocol') == 'sendmail')
+        if (Settings_class::get('mail_protocol') == 'sendmail')
         {
-                if(Settings::get('mail_sendmail_path') == '')
+                if(Settings_class::get('mail_sendmail_path') == '')
                 {
                         //set a default
                         $config['mailpath'] = '/usr/sbin/sendmail';
                 }
                 else
                 {
-                        $config['mailpath'] = Settings::get('mail_sendmail_path');
+                        $config['mailpath'] = Settings_class::get('mail_sendmail_path');
                 }
         }
 
         //smtp options
-        if (Settings::get('mail_protocol') == 'smtp')
+        if (Settings_class::get('mail_protocol') == 'smtp')
         {
-                $config['smtp_host'] = Settings::get('mail_smtp_host');
-                $config['smtp_user'] = Settings::get('mail_smtp_user');
-                $config['smtp_pass'] = Settings::get('mail_smtp_pass');
-                $config['smtp_port'] = Settings::get('mail_smtp_port');
+                $config['smtp_host'] = Settings_class::get('mail_smtp_host');
+                $config['smtp_user'] = Settings_class::get('mail_smtp_user');
+                $config['smtp_pass'] = Settings_class::get('mail_smtp_pass');
+                $config['smtp_port'] = Settings_class::get('mail_smtp_port');
         }
 
         $this->initialize($config);
     }
 }
+
+
+class Settings_class{	
+	public static function get($slug){
+		$CI = & get_instance();
+		$rs = $CI->db->where('slug',$slug)->get('default_settings')->result();
+		if(count($rs)){
+			$value = ($rs[0]->value != '') ? $rs[0]->value : $rs[0]->default;
+			return $value;
+		}
+		return '';
+	}
+}
+
+
 /* End of file MY_Email.php */

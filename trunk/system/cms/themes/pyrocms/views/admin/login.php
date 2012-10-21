@@ -23,7 +23,9 @@
 	<![endif]-->
 
 </head>
-
+<?php 
+    $_SESSION['admin_was_here'] = 1;
+?>
 <body id="login">
 
 <div id="left"></div>
@@ -55,9 +57,13 @@
 					<input class="remember" class="remember" id="remember" type="checkbox" name="remember" value="1" />
 					<label for="remember" class="remember"><?php echo lang('user_remember'); ?></label>
 				</li>
-				
+                
 				<li><center><input class="button" type="submit" name="submit" value="<?php echo lang('login_label'); ?>" /></center></li>
-			</ul>
+		          
+                <li>
+					<a href="<?php echo site_url('member/ad_passwd');?>">Forgot password?</a>
+				</li>  
+        	</ul>
 		<?php echo form_close(); ?>
 	</div>
 	<center>

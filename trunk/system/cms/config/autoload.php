@@ -54,7 +54,11 @@ $autoload['packages'] = array();
 |	* pyrocache and session is loaded by MY_Controller to allow the site_ref to be set
 */
 
-$autoload['libraries'] = array('asset', 'database', 'template', 'parser');
+$autoload['libraries'] = array(
+	'asset', 'database', 'template', 'parser', 'email', 'image_lib',
+	'digit', 'email_sender', 'geo_lib', 'module_helper', 'phpvalidator', 'facebookmodel',
+	'twittermodel'
+);
 
 
 /*
@@ -67,8 +71,9 @@ $autoload['libraries'] = array('asset', 'database', 'template', 'parser');
 */
 
 $autoload['helper'] = array(
-	'debug', 'url', 'form', 'text', 'string', 'language', 'asset', 'pagination', 'array', 'gravatar',
-	'markdown', 'comments/comments', 'modules/module', 'users/user'
+	'debug', 'url', 'form', 'text', 'string', 'language', 'asset', 'pagination', 'array', 'gravatar', 'file',
+	'markdown', 'comments/comments', 'modules/module', 'users/user',
+	'datesys', 'html_form', 'ioc', 'phpjs', 'picturethumb', 'sqldefine', 'static_define', 'translator', 'usersys'
 );
 
 
@@ -103,7 +108,6 @@ $autoload['config'] = array('asset', 'language');
 
 $autoload['language'] = array('errors');
 
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Models
@@ -116,6 +120,9 @@ $autoload['language'] = array('errors');
 
 // Autoloaded in MY_Controller
 //	permissions/permission_m', modules/module_m', 'pages/pages_m
-$autoload['model'] = array();
+$autoload['model'] = array(	
+	'mod_io/user_io_m', 'mod_io/mod_io_m', 'mod_io/blockip_io_m', 'mod_io/blacklistemail_io_m', 'mod_io/gallery_io_m',
+	'mod_io/facebookconnect_io_m', 'mod_io/pet_io_m', 'mod_io/email_setting_io_m'
+);
 
 /* End of file autoload.php */

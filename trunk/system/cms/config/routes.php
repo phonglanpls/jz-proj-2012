@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = 'pages';
+$route['default_controller'] = 'member';
 $route['404_override'] = 'pages';
 
 $route['admin/help/([a-zA-Z0-9_-]+)']		= 'admin/help/$1';
@@ -46,12 +46,35 @@ $route['admin/([a-zA-Z0-9_-]+)/(:any)']	= '$1/admin/$2';
 $route['admin/(login|logout)']			= 'admin/$1';
 $route['admin/([a-zA-Z0-9_-]+)']			= '$1/admin/index';
 
-$route['register'] = 'users/register';
+//$route['register'] = 'users/register';
 
-$route['user/([\w]+)']	= 'users/view/$1';
-$route['my-profile']	= 'users/index';
-$route['edit-profile']	= 'users/edit';
+//$route['user/([\w]+)']	= 'users/view/$1';
+//$route['my-profile']	= 'users/index';
+//$route['edit-profile']	= 'users/edit';
 
-$route['sitemap.xml'] = 'sitemap/xml';
+//$route['sitemap.xml'] = 'sitemap/xml';
+
+$route['fadmin']			= 'admin/login';
+$route['fadmin/(login|logout)']			= 'admin/$1';
+$route['fadmin/([a-zA-Z0-9_-]+)']			= '$1/admin/index';
+$route['fadmin/([a-zA-Z0-9_-]+)/(:any)']	= '$1/admin/$2';
+
+ 
+$route['admin']			= 'member';
+
+
+$route['user']			= 'user';
+$route['member']		= 'member';
+$route['mod_io']		= 'mod_io';
+$route['hentai']		= 'hentai';
+
+$route['user/(:any)']			= 'user/$1';
+$route['member/(:any)']		= 'member/$1';
+$route['mod_io/(:any)']		= 'mod_io/$1';
+$route['hentai/(:any)']		= 'hentai/$1';
+$route['videos/(:any)']		= 'videos/$1';
+
+$route['([a-zA-Z0-9_-]+)']	= 'user/user_profile/$1';
+$route['([a-zA-Z0-9_-]+)/(:any)']	= 'user/user_profile/$1/$2';
 
 /* End of file routes.php */
