@@ -15,7 +15,7 @@ function pick_language()
 	
 	else
 	{
-		session_start();
+		//session_start();
 	}
 		
     // Lang set in URL via ?lang=something

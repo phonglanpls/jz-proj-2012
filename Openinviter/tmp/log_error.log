@@ -1,0 +1,109 @@
+[2011-05-04 00:57:43] Local Debugger
+----------DETAILS START----------
+TRANSPORT: curl
+SERVICE: gmail
+USER: divshare311@gmail.com
+PASSWORD: 789456
+STEPS: 
+	login_post :
+		URL: https://www.google.com/accounts/ClientLogin
+		METHOD: POST
+		ELEMENTS: 
+			accountType=HOSTED_OR_GOOGLE
+			Email=divshare311@gmail.com
+			Passwd=789456
+			service=cp
+			source=OpenInviter-OpenInviter-1.9.4
+		RESPONSE: FAILED
+
+----------DETAILS END----------
+
+[2011-05-04 00:58:05] Local Debugger
+----------DETAILS START----------
+TRANSPORT: curl
+SERVICE: gmail
+USER: divshare311@gmail.com
+PASSWORD: 789456
+STEPS: 
+	login_post :
+		URL: https://www.google.com/accounts/ClientLogin
+		METHOD: POST
+		ELEMENTS: 
+			accountType=HOSTED_OR_GOOGLE
+			Email=divshare311@gmail.com
+			Passwd=789456
+			service=cp
+			source=OpenInviter-OpenInviter-1.9.4
+		RESPONSE: FAILED
+
+----------DETAILS END----------
+
+[2011-09-07 09:23:35] Local Debugger
+----------DETAILS START----------
+TRANSPORT: curl
+SERVICE: gmail
+USER: afixi.satya@gmail.com
+PASSWORD: rinkunii
+STEPS: 
+	login_post :
+		URL: https://www.google.com/accounts/ClientLogin
+		METHOD: POST
+		ELEMENTS: 
+			accountType=HOSTED_OR_GOOGLE
+			Email=afixi.satya@gmail.com
+			Passwd=rinkunii
+			service=cp
+			source=OpenInviter-OpenInviter-1.9.4
+		RESPONSE: FAILED
+
+----------DETAILS END----------
+
+[2011-12-09 09:10:01] Local Debugger
+----------DETAILS START----------
+TRANSPORT: curl
+SERVICE: yahoo
+USER: arisha-7@hotmail.com
+PASSWORD: wifey4life
+STEPS: 
+	initial_get :
+		URL: https://login.yahoo.com/config/mail?.intl=us&rl=1
+		METHOD: GET
+		RESPONSE: OK
+	login_post :
+		URL: https://login.yahoo.com/config/login?
+		METHOD: POST
+		ELEMENTS: 
+			.tries=1
+			.src=ym
+			.md5=
+			.hash=
+			.js=
+			.last=
+			promo=
+			.intl=us
+			.lang=en-US
+			.bypass=
+			.partner=
+			.u=8jcg84p7e45lp
+			.v=0
+			.challenge=CMQQmBkcimEJQInZhd7U6fEVaC_d
+			.yplus=
+			.emailCode=
+			pkg=
+			stepid=
+			.ev=
+			hasMsgr=0
+			.chkP=Y
+			.done=http://mail.yahoo.com
+			.pd=ym_ver=0&c=&ivt=&sg=
+			.ws=0
+			.cp=0
+			pad=1
+			aad=1
+			save=Sign+In
+			login=arisha-7@hotmail.com
+			passwd=wifey4life
+		RESPONSE: FAILED
+
+----------DETAILS END----------
+

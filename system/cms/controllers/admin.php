@@ -69,7 +69,7 @@ class Admin extends Admin_Controller
 		// If the validation worked, or the user is already logged in
 		if ($this->form_validation->run() OR $this->ion_auth->logged_in())
 		{
-			redirect('admin');
+			redirect('fadmin/juzon');
 		}
 
 		$this->template
@@ -88,7 +88,7 @@ class Admin extends Admin_Controller
 		$this->load->language('users/user');
 		$this->ion_auth->logout();
 		$this->session->set_flashdata('success', lang('user_logged_out'));
-		redirect('admin/login');
+		redirect('fadmin');
 	}
 
 	/**
